@@ -7,6 +7,8 @@ bricks:
   #   path: bricks/feature
   # featureEnumState:
   #   path: bricks/featureEnumState
+  # featureMultiEnumState:
+  #   path: bricks/featureMultiEnumState
 
   #*--------- Github ----------------------------
   feature:
@@ -20,10 +22,14 @@ bricks:
   featureMultiEnumState:
     git:
       url: https://github.com/EslamFares/fares_helper_mason.git
-      path: bricks/featureMultiEnumState
+      path: bricks/featureMultiEnumStateß
 
   #*--------- Use ----------------------------
 #!| get(first)                        | make(last)                        |
 # | mason get feature                 | mason make feature                |
 # | mason get featureEnumState        | mason make featureEnumState       |
 # | mason get featureMultiEnumState   | mason make featureMultiEnumState  |
+
+#*--------- Error Path ----------------------------
+#! error path
+# mason cache clear
