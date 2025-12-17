@@ -20,25 +20,16 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   }
 
 //===========================================
-  Future<void> init() async{
-    await go();
-  }
+  Future<void> init() async{}
 
 //======================================================
-  Future<void>  go() async {
+  Future<void> get{{name.pascalCase()}}() async {
      emit(const {{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.loading)); 
-    try {
-      final res = await {{name.camelCase()}}Repo.go();
-      debugPrint('res: $res');
-      emit({{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.success, {{name.camelCase()}}Model: res)); 
-    } catch (e) {
-      if (e is ServerFailure) {
-         logPro.error("ServerFailure : ${e.toString()}");
-        emit({{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.error, errorMessage: e.msgApi)); 
-      } else {
-        logPro.error("e.toString() : ${e.toString()}");
-        emit({{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.error, errorMessage: LocaleKeys.anErrorOccurred.tr())); 
-      }
-    }
+   
+     final res = await {{name.camelCase()}}Repo.get{{name.pascalCase()}}();
+     res.fold(
+    (l) => emit({{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.error, errorMessage: l)),
+    (r) => emit({{name.pascalCase()}}State(status: {{name.pascalCase()}}Status.success, {{name.camelCase()}}Model: r)),
+  );
   }
 }
