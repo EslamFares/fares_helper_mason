@@ -14,8 +14,6 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
   const {{name.pascalCase()}}Screen({super.key});
 
   @override
-/*************  ✨ Windsurf Command ⭐  *************/
-/*******  4cdd5cc2-a849-4801-b21d-bd66aa7c0015  *******/
   Widget build(BuildContext context) {
     return BlocProvider(
       //TODO add {{name.pascalCase()}}Repo in getIt
