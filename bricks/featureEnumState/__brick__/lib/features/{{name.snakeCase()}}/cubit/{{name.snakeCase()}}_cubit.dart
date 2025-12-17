@@ -9,7 +9,7 @@ import '../data/repo/{{name.snakeCase()}}_repo.dart';
 part '{{name.snakeCase()}}_state.dart';
 
 class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
-  {{name.pascalCase()}}Cubit(this.{{name.camelCase()}}Repo) : super(const {{name.pascalCase()}}State(type: {{name.pascalCase()}}type.initial));
+  {{name.pascalCase()}}Cubit(this.{{name.camelCase()}}Repo) : super(const {{name.pascalCase()}}State(type: {{name.pascalCase()}}Status.initial));
   static {{name.pascalCase()}}Cubit get(context) => BlocProvider.of(context);
   final {{name.pascalCase()}}Repo {{name.camelCase()}}Repo;
   //===========================================
@@ -23,14 +23,14 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
 
 //======================================================
   Future<void> get{{name.pascalCase()}}() async {
-     emit(state.copyWith(type: {{name.pascalCase()}}type.loading)); 
+     emit(state.copyWith(type: {{name.pascalCase()}}Status.loading)); 
    
      final res = await {{name.camelCase()}}Repo.get{{name.pascalCase()}}();
      res.fold(
-    (l) => emit(state.copyWith(type: {{name.pascalCase()}}type.error, errorMessage: l)),
+    (l) => emit(state.copyWith(type: {{name.pascalCase()}}Status.error, errorMessage: l)),
     (r)  {
       logPro.s("res : $r");
-      emit(state.copyWith(type: {{name.pascalCase()}}type.success, data: r));
+      emit(state.copyWith(type: {{name.pascalCase()}}Status.success, data: r));
     },
   );
   }
