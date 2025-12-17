@@ -18,7 +18,7 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
       //TODO add {{name.pascalCase()}}Repo in getIt
       //  getIt.registerSingleton<{{name.pascalCase()}}Repo>({{name.pascalCase()}}Repo(getIt<ApiService>()));
       // TODO add route
-      // static const String {{name.camelCase()}}Screen = '/{{name.pascalCase()}}Screen';
+      //  static const String {{name.camelCase()}}Screen = '/{{name.pascalCase()}}Screen';
       create: (context) => {{name.pascalCase()}}Cubit(getIt<{{name.pascalCase()}}Repo>()),
       child: 
        Scaffold(
