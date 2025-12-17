@@ -9,6 +9,8 @@ bricks:
   #   path: bricks/featureEnumState
   # featureMultiEnumState:
   #   path: bricks/featureMultiEnumState
+  # featureMultiEnumStateSingle:
+  #   path: bricks/featureMultiEnumStateSingle
 
   #*--------- Github ----------------------------
   feature:
