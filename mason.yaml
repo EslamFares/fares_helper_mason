@@ -39,3 +39,8 @@ bricks:
 #*--------- Error Path ----------------------------
 #! error path
 # mason cache clear
+#! delete data in line => mason-lock.json
+
+#*--------- versions of mason used----------------------------
+#  run
+#  mason list
