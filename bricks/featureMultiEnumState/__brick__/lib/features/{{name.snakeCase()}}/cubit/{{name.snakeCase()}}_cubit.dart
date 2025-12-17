@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../data/repo/{{name.snakeCase()}}_repo.dart';
 import '../data/model/{{name.snakeCase()}}_model.dart'; 
-import '../../../../../core/network/errors/catch_error_message.dart';
+import '../../../../../core/network/errors/catch_error_message_extension.dart';
 import '../../../core/shared/bloc/state_box.dart';
 
 part '{{name.snakeCase()}}_state.dart';
@@ -35,23 +35,15 @@ Future<void> _getData() {
     return Future.wait(futures);
   }
 //======================================================
-  Future<void>  get{{name.pascalCase()}}() async {
-     emit(state.copyWith(
-      get{{name.pascalCase()}}: StateBox.loading(),
-    ));
-    try {
-      final res = await {{name.camelCase()}}Repo.get{{name.pascalCase()}}();
-    //  {{name.pascalCase()}}Model model = {{name.pascalCase()}}Model.fromJson(res);
-      emit(state.copyWith(
-        get{{name.pascalCase()}}: StateBox.success(data: res),
-      )
-      );
-    } catch (e) {
-      String errorMessage = e.catchErrorMessage();
-    emit(state.copyWith(
-        get{{name.pascalCase()}}: StateBox.error(errorMessage: errorMessage),
-      )
-      );
-    }
-  }
+  Future<void> get{{name.pascalCase()}}() async {
+  emit(state.copyWith(get{{name.pascalCase()}}: StateBox.loading()));
+
+  final res = await {{name.camelCase()}}Repo.get{{name.pascalCase()}};
+  res.fold(
+    (l) => emit(
+      state.copyWith(get{{name.pascalCase()}}: StateBox.error(errorMessage: l))),
+    (r) => emit(
+      state.copyWith(get{{name.pascalCase()}}: StateBox.success(data: r))),
+  );
+}
 }

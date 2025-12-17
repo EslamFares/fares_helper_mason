@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../data/repo/{{name.snakeCase()}}_repo.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
 import '../../../../core/dependency_injection/get_it_setup.dart';
-import 'package:fares_helper/core/utils/app_utils/app_toast.dart';
+import '../../../../core/utils/app_utils/app_toast.dart';
 import '../../../../core/shared/bloc/state_box.dart';
 import '../../../../core/shared_widgets/app_loader.dart';
 import '../../../../core/shared_widgets/app_error/app_error.dart';
