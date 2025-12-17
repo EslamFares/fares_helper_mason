@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import '../../data/repo/{{name.snakeCase()}}_repo.dart';
-import '../../cubit/{{name.snakeCase()}}_cubit.dart';
+
 import '../../../../core/dependency_injection/get_it_setup.dart';
-import '../../../../core/utils/app_utils/app_toast.dart';
 import '../../../../core/shared/bloc/state_box.dart';
-import '../../../../core/shared_widgets/app_loader.dart';
 import '../../../../core/shared_widgets/app_error/app_error.dart';
+import '../../../../core/shared_widgets/app_loader.dart';
+import '../../cubit/{{name.snakeCase()}}_cubit.dart';
+import '../../data/repo/{{name.snakeCase()}}_repo.dart';
 
 
 class {{name.pascalCase()}}Screen extends StatelessWidget {
@@ -17,6 +17,8 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
     return BlocProvider(
       //TODO add {{name.pascalCase()}}Repo in getIt
       //  getIt.registerSingleton<{{name.pascalCase()}}Repo>({{name.pascalCase()}}Repo(getIt<ApiService>()));
+      // TODO add route
+      // static const String {{name.camelCase()}}Screen = '/{{name.pascalCase()}}Screen';
       create: (context) => {{name.pascalCase()}}Cubit(getIt<{{name.pascalCase()}}Repo>()),
       child: 
        Scaffold(

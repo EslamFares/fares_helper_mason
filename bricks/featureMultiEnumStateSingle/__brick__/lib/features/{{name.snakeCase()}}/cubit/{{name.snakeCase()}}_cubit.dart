@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../data/repo/{{name.snakeCase()}}_repo.dart';
 import '../data/model/{{name.snakeCase()}}_model.dart'; 
-import '../../../../../core/network/errors/catch_error_message_extension.dart';
 import '../../../core/shared/bloc/state_box.dart';
 
 part '{{name.snakeCase()}}_state.dart';
