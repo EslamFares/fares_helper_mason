@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../data/repo/{{name.snakeCase()}}_repo.dart';
-import 'package:easy_localization/easy_localization.dart';
-import '../../../const/locale_keys.g.dart';
-import '../../../core/network/errors/server_failure.dart';
 import '../../../core/utils/log/logger.dart';
 
 part '{{name.snakeCase()}}_state.dart';
