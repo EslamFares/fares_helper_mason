@@ -1,0 +1,79 @@
+name: featureMultiEnumStateSingle
+description: A new brick created with the Mason CLI.
+#! how to use in last of file
+# The following defines the brick repository url.
+# Uncomment and update the following line before publishing the brick.
+# repository: https://github.com/my_org/my_repo
+
+# The following defines the version and build number for your brick.
+# A version number is three numbers separated by dots, like 1.2.34
+# followed by an optional build number (separated by a +).
+version: 0.1.1+1
+
+# The following defines the environment for the current brick.
+# It includes the version of mason that the brick requires.
+environment:
+  mason: ">=0.1.0-dev.51 <=0.1.1"
+  # mason: ^0.1.3
+
+# Variables specify dynamic values that your brick depends on.
+# Zero or more variables can be specified for a given brick.
+# Each variable has:
+#  * a type (string, number, boolean, enum, array, or list)
+#  * an optional short description
+#  * an optional default value
+#  * an optional list of default values (array only)
+#  * an optional prompt phrase used when asking for the variable
+#  * a list of values (enums only)
+#  * an optional separator (list only)
+vars:
+  name:
+    type: string
+    description: Your name
+    default: home
+    prompt: What is your feature name?
+#! install
+#1 dart pub global activate mason_cli
+#2 dart pub global activate mason
+## if error show in brick folder
+# open dart setting and add this ==>
+# "dart.analysisExcludedFolders": ["bricks"]
+#-------or---------
+# add to analyzer in analysis_options.yaml
+#   include: package:flutter_lints/flutter.yaml
+
+# analyzer:
+#   exclude: [build/**, lib/**.freezed.dart, lib/**.g.dart, bricks/**]
+
+# linter:
+#----------------
+#! sec
+#1 folder in app folder name .mason > bricks.json contain bricks folder path sure that
+#! third
+#1  mason init
+#2 past folder bricks in app folders
+#3 in mason.yaml file replace with this
+# bricks:
+#   featureEnumState:
+#       path: bricks/featureEnumState
+#4 mason get featureEnumState
+# if edit in brick folder
+#! last
+#5 mason make featureEnumState
+# every time you want to add a new feature in lib folder
+#! erroro path
+# mason cache clear
+#$---------------------------------------------------------------------
+#add two features (featureEnumState &feature)
+#$(1) in mason.yaml file add this
+# bricks:
+#   feature:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/feature
+#   featureEnumState:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/featureEnumState#
+#  featureMultiEnumState:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/featureMultiEnumState
+#$(2) make sure mason-lok.json contain 2 correct path
+#$(3) make sure folder name (.mason) in project
+#     and look for bricks.json sure have correct pathes also
+#$---------------------------------------------------------------------

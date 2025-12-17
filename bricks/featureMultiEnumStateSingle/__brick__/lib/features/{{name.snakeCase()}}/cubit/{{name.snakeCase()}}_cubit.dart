@@ -17,23 +17,8 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   }
 
 //===========================================
-  Future<void> init() async{
-    emit(state.copyWith(
-      getAllData: StateBox.loading(),
-    ));
-    await _getData();
-    emit(state.copyWith(
-      getAllData: StateBox.successWithoutData(),
-    ));
-  }
+  Future<void> init() async{}
 
-Future<void> _getData() {
-    List<Future<void>> futures = [
-      get{{name.pascalCase()}}(),
-      
-      ];
-    return Future.wait(futures);
-  }
 //======================================================
   Future<void> get{{name.pascalCase()}}() async {
   emit(state.copyWith(get{{name.pascalCase()}}: StateBox.loading()));
