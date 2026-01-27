@@ -5,8 +5,8 @@ import '../../cubit/{{name.snakeCase()}}_cubit.dart';
 import '../../../../core/dependency_injection/get_it_setup.dart';
 import '../../../../core/utils/app_utils/app_toast.dart';
 import '../../../../core/shared/bloc/state_box.dart';
-import '../../../../core/shared_widgets/app_loader.dart';
-import '../../../../core/shared_widgets/app_error/app_error.dart';
+import '../../../../core/shared/widgets/app_loader/app_loader.dart';
+import '../../../../core/shared/widgets/app_error/app_error.dart';
 import '../widgets/{{name.snakeCase()}}_screen_body.dart';
 
 

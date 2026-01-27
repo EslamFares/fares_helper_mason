@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
-import '../../../../core/utils/extentions/spacing_extensions.dart';
+import 'package:asset_inventory/core/utils/extensions/spacing_extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

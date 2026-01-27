@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/dependency_injection/get_it_setup.dart';
 import '../../../../core/shared/bloc/state_box.dart';
-import '../../../../core/shared_widgets/app_error/app_error.dart';
-import '../../../../core/shared_widgets/app_loader.dart';
+import '../../../../core/shared/widgets/app_error/app_error.dart';
+import '../../../../core/shared/widgets/app_loader/app_loader.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
 import '../../data/repo/{{name.snakeCase()}}_repo.dart';
 
