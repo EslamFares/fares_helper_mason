@@ -42,5 +42,51 @@ bricks:
 #! delete data in line => mason-lock.json
 
 #*--------- versions of mason used----------------------------
-#  run
-#  mason list
+#  run ==> mason list
+
+#$============================== Install ======================
+#! install
+#1 dart pub global activate mason_cli
+#2 dart pub global activate mason
+## if error show in brick folder
+# open dart setting and add this ==>
+# "dart.analysisExcludedFolders": ["bricks"]
+#-------or---------
+# add to analyzer in analysis_options.yaml
+#   include: package:flutter_lints/flutter.yaml
+
+# analyzer:
+#   exclude: [build/**, lib/**.freezed.dart, lib/**.g.dart, bricks/**]
+
+# linter:
+#----------------
+#! sec
+#1 folder in app folder name .mason > bricks.json contain bricks folder path sure that
+#! third
+#1  mason init
+#2 past folder bricks in app folders
+#3 in mason.yaml file replace with this
+# bricks:
+#   featureEnumState:
+#       path: bricks/featureEnumState
+#4 mason get featureEnumState
+# if edit in brick folder
+#! last
+#5 mason make featureEnumState
+# every time you want to add a new feature in lib folder
+#! error path
+# mason cache clear
+#$---------------------------------------------------------------------
+#add two features (featureEnumState &feature)
+#$(1) in mason.yaml file add this
+# bricks:
+#   feature:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/feature
+#   featureEnumState:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/featureEnumState#
+#  featureMultiEnumState:
+#     path: /Users/gulfterminal/Desktop/eslam/projects/fares_helper/bricks/featureMultiEnumState
+#$(2) make sure mason-lok.json contain 2 correct path
+#$(3) make sure folder name (.mason) in project
+#     and look for bricks.json sure have correct path also
+#$---------------------------------------------------------------------
