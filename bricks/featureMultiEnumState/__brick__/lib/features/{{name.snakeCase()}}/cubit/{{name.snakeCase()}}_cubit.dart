@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../data/repo/{{name.snakeCase()}}_repo.dart';
 import '../data/model/{{name.snakeCase()}}_model.dart'; 
@@ -7,7 +8,7 @@ part '{{name.snakeCase()}}_state.dart';
 
 class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   {{name.pascalCase()}}Cubit(this.{{name.camelCase()}}Repo) : super({{name.pascalCase()}}State.initial());
-  static {{name.pascalCase()}}Cubit get(context) => BlocProvider.of(context);
+  static {{name.pascalCase()}}Cubit get(BuildContext context) => BlocProvider.of(context);
   final {{name.pascalCase()}}Repo {{name.camelCase()}}Repo;
   //===========================================
   @override

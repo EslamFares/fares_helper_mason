@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +11,7 @@ part '{{name.snakeCase()}}_state.dart';
 
 class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   {{name.pascalCase()}}Cubit(this.{{name.camelCase()}}Repo) : super(const {{name.pascalCase()}}State(type: {{name.pascalCase()}}Status.initial));
-  static {{name.pascalCase()}}Cubit get(context) => BlocProvider.of(context);
+  static {{name.pascalCase()}}Cubit get(BuildContext context) => BlocProvider.of(context);
   final {{name.pascalCase()}}Repo {{name.camelCase()}}Repo;
   //===========================================
   @override
@@ -19,7 +20,9 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
   }
 
 //===========================================
-  Future<void> init() async{}
+  Future<void> init() async{
+   await get{{name.pascalCase()}}();
+  }
 
 //======================================================
   Future<void> get{{name.pascalCase()}}() async {

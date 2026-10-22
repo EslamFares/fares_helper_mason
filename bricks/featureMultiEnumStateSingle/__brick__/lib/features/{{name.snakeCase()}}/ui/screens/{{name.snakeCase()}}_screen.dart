@@ -7,20 +7,25 @@ import '../../../../core/shared/widgets/app_error/app_error.dart';
 import '../../../../core/shared/widgets/app_loader/app_loader.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
 import '../../data/repo/{{name.snakeCase()}}_repo.dart';
+part '../../data/model/{{name.snakeCase()}}_screen_args.dart';
 
 
-class {{name.pascalCase()}}Screen extends StatelessWidget {
+class {{name.pascalCase()}}Screen extends void StatelessWidget {
+  // final ForTestScreenArgs args;
   const {{name.pascalCase()}}Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       //TODO add {{name.pascalCase()}}Repo in getIt
+      //*  ---------------------------------- {{name.pascalCase()}} Feature --------------------------------------
       //  getIt.registerSingleton<{{name.pascalCase()}}Repo>({{name.pascalCase()}}Repo(getIt<ApiService>()));
+      //  getIt.registerFactory<{{name.pascalCase()}}Cubit>(() => {{name.pascalCase()}}Cubit(getIt<{{name.pascalCase()}}Repo>()));
       // TODO add route
       //   static const String {{name.camelCase()}}Screen = '/{{name.pascalCase()}}Screen';
-      create: (context) => {{name.pascalCase()}}Cubit(getIt<{{name.pascalCase()}}Repo>()),
-      child: 
+      //   GoRoute(path: AppRoutersName.{{name.camelCase()}}Screen,builder: (context, state) => const {{name.pascalCase()}}Screen()),
+      create: (context) => getIt<{{name.pascalCase()}}Cubit>()..init(),
+      child:
        Scaffold(
             appBar: AppBar(title: const Text("{{name.pascalCase()}}Screen")),
             body: BlocConsumer<{{name.pascalCase()}}Cubit, {{name.pascalCase()}}State>(
