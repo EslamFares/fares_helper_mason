@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import '../../data/repo/{{name.snakeCase()}}_repo.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
 import '../../../../core/dependency_injection/get_it_setup.dart';
+
 part '../../data/model/{{name.snakeCase()}}_screen_args.dart';
 
 
-class {{name.pascalCase()}}Screen extends void StatelessWidget {
+class {{name.pascalCase()}}Screen extends StatelessWidget {
   // final ForTestScreenArgs args;
   const {{name.pascalCase()}}Screen({super.key});
 

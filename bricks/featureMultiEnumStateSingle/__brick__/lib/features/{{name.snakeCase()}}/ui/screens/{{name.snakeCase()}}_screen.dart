@@ -6,11 +6,11 @@ import '../../../../core/shared/bloc/state_box.dart';
 import '../../../../core/shared/widgets/app_error/app_error.dart';
 import '../../../../core/shared/widgets/app_loader/app_loader.dart';
 import '../../cubit/{{name.snakeCase()}}_cubit.dart';
-import '../../data/repo/{{name.snakeCase()}}_repo.dart';
+
 part '../../data/model/{{name.snakeCase()}}_screen_args.dart';
 
 
-class {{name.pascalCase()}}Screen extends void StatelessWidget {
+class {{name.pascalCase()}}Screen extends StatelessWidget {
   // final ForTestScreenArgs args;
   const {{name.pascalCase()}}Screen({super.key});
 
